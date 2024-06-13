@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+      #ball{
+      width: 150px;
+      height: 150px;
+      top: 100px;
+      position: absolute;
+      }
+     .container {
+      min-width: 100vh;
+      min-height: 95vh;
+      margin: 10px;
+      background-color: rgb(50, 243, 11);
+      padding: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+     } 
+     #target{
+     width: 250px;
+     height: 250px;
+     top: 100px;
+     bottom: 300px;
+     left: 400px;
+     right: 400px;
+     position: absolute;
+     }
+    
+</style>
+<head>
+    <title>hit the target</title>
+</head>
+<body>
+    <div class="container">
+<img id="ball" src="ball.png">
+     <button onclick="teleport()">teleport</button>
+    </div>
+
+    </div class="container">
+<img id="target" src="target.png">
+</div>
+
+</body>
+<script>
+    const maxHeight = window.innerHeight - 150;
+    const maxwidth = window.innerWidth - 150;
+
+
+    function teleport() {
+        const ball = document.getElementById("ball");
+
+        const randomTopPosition = Math.floor(Math.random() * maxHeight);
+        const randomLeftPosition = Math.floor(Math.random() * maxwidth);
+        
+        ball.style.top = randomTopPosition + 'px'
+        ball.style.left = randomLeftPosition + 'px'
+
+    }
+
+</script>
+</html>
